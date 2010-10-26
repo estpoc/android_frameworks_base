@@ -345,6 +345,14 @@ class ServerThread extends Thread {
             }
 
             try {
+                Slog.i(TAG, "Location Proxy Service");
+                //ServiceManager.addService(Context.SEARCH_SERVICE,
+                //        new SearchManagerService(context));
+            } catch (Throwable e) {
+                Slog.e(TAG, "Failure starting Location Proxy Service", e);
+            }
+
+            try {
                 Slog.i(TAG, "Search Service");
                 ServiceManager.addService(Context.SEARCH_SERVICE,
                         new SearchManagerService(context));
