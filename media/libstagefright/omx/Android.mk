@@ -6,6 +6,10 @@ include external/opencore/Config.mk
 LOCAL_C_INCLUDES := $(PV_INCLUDES)
 LOCAL_CFLAGS := $(PV_CFLAGS_MINUS_VISIBILITY)
 
+ifeq ($(TARGET_BOARD_PLATFORM),omap3)
+LOCAL_CFLAGS += -DTARGET_OMAP3
+endif
+
 LOCAL_C_INCLUDES += $(JNI_H_INCLUDE)
 
 LOCAL_SRC_FILES:=                     \
